@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Retreat Access</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GΣΛ Retreat 2026</title>
   <style>
-    body { font-family: Arial; max-width: 400px; margin: 80px auto; text-align: center; }
-    input { padding: 10px; width: 80%; margin-top: 10px; }
-    button { padding: 10px 20px; margin-top: 15px; cursor: pointer; }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:#411F1F;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+    .bg1{position:fixed;width:600px;height:600px;background:radial-gradient(circle,rgba(162,102,43,0.2) 0%,transparent 70%);top:-200px;right:-200px;pointer-events:none;}
+    .bg2{position:fixed;width:400px;height:400px;background:radial-gradient(circle,rgba(81,45,30,0.4) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none;}
+    .box{background:rgba(255,255,255,0.05);border:1px solid rgba(225,192,157,0.25);border-radius:20px;padding:52px 44px;text-align:center;max-width:380px;width:90%;backdrop-filter:blur(10px);}
+    .greek{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#E1C09D;margin-bottom:14px;}
+    h1{font-family:'Playfair Display',serif;color:#fff;font-size:34px;font-weight:900;line-height:1.15;margin-bottom:6px;}
+    .sub{color:rgba(225,192,157,0.6);font-size:13px;margin-bottom:10px;}
+    .rule{width:40px;height:2px;background:#A2662B;margin:18px auto 28px;}
+    input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(225,192,157,0.3);border-radius:10px;padding:14px 18px;color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;margin-bottom:16px;text-align:center;letter-spacing:2px;}
+    input::placeholder{color:rgba(225,192,157,0.35);letter-spacing:0;}
+    input:focus{border-color:#E1C09D;}
+    button{width:100%;background:#512D1E;color:#E1C09D;border:2px solid #A2662B;border-radius:10px;padding:14px;font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all 0.2s;letter-spacing:0.5px;}
+    button:hover{background:#A2662B;color:#fff;border-color:#A2662B;}
+    .err{color:#f4a78a;font-size:13px;margin-top:12px;display:none;}
   </style>
 </head>
 <body>
-  <h2>Enter Password</h2>
-  <input type="password" id="pw" placeholder="Password">
-  <button onclick="check()">Enter</button>
-
-  <script>
-    function check() {
-      const password = "retreat2026"; // ← CHANGE THIS
-      const input = document.getElementById("pw").value;
-
-      if (input === password) {
-        window.location.href = "home.html";
-      } else {
-        alert("Incorrect password");
-      }
-    }
-  </script>
+<div class="bg1"></div><div class="bg2"></div>
+<div class="box">
+  <div class="greek"> Gamma Sigma Chapter</div>
+  <h1>Chapter Retreat<br>2026</h1>
+  <p class="sub">September 4–7 · Madison Heights, VA</p>
+  <div class="rule"></div>
+  <input type="password" id="pw" placeholder="Enter password" onkeydown="if(event.key==='Enter')check()">
+  <button onclick="check()">Enter →</button>
+  <p class="err" id="err">Incorrect password. Try again.</p>
+</div>
+<script>
+function check(){
+  var pw="retreat2026",val=document.getElementById("pw").value,err=document.getElementById("err");
+  if(val===pw){window.location.href="home.html";}
+  else{err.style.display="block";document.getElementById("pw").value="";}
+}
+</script>
 </body>
 </html>
