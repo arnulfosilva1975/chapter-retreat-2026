@@ -1,165 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Retreat Activities</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities — GΣΛ Retreat 2026</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --brown: #512D1E;
+    --pullman: #411F1F;
+    --russet: #643614;
+    --ochre: #8D633A;
+    --copper: #A2662B;
+    --tan: #E1C09D;
+    --tan-light: #f0dcc2;
+    --cream: #faf6f0;
+    --white: #FFFFFF;
+    --shadow: 0 4px 30px rgba(65,31,31,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--brown); min-height: 100vh; }
 
-    /* NAV BAR */
-    nav {
-      background: #222;
-      padding: 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
+  .site-header { background: var(--pullman); color: var(--white); padding: 48px 24px 36px; text-align: center; position: relative; overflow: hidden; }
+  .site-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 0%, rgba(162,102,43,0.25) 0%, transparent 70%); pointer-events: none; }
+  .site-header .greek { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--tan); margin-bottom: 10px; font-weight: 500; position: relative; }
+  .site-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 44px); font-weight: 900; position: relative; color: var(--white); }
+  .site-header .subtitle { margin-top: 10px; font-size: 14px; color: var(--tan); position: relative; }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .section h2 {
-      margin-top: 0;
-      font-size: 22px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
-    }
-    ul {
-      padding-left: 20px;
-      line-height: 1.6;
-    }
-    .note {
-      background: #fff8d9;
-      padding: 12px;
-      border-left: 4px solid #f0c200;
-      margin-top: 15px;
-      border-radius: 4px;
-      font-size: 14px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+  nav { background: var(--brown); border-bottom: 3px solid var(--copper); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(65,31,31,0.25); }
+  nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; padding: 0; margin: 0; }
+  nav ul li a { display: block; padding: 14px 22px; color: var(--tan-light); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s, background 0.2s; border-bottom: 3px solid transparent; margin-bottom: -3px; }
+  nav ul li a:hover { color: var(--white); background: rgba(255,255,255,0.08); border-bottom-color: var(--tan); }
+
+  .container { max-width: 960px; margin: 48px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 28px; }
+
+  .card { background: var(--white); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); border: 1px solid rgba(162,102,43,0.15); }
+  .card h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--pullman); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--tan-light); display: flex; align-items: center; gap: 10px; }
+  .card h2 .icon { width: 30px; height: 30px; background: var(--brown); border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+
+  .card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+  .card ul li { padding: 9px 0 9px 20px; position: relative; font-size: 15px; line-height: 1.6; color: #4a3020; border-bottom: 1px solid var(--tan-light); }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li::before { content: ''; position: absolute; left: 0; top: 18px; width: 7px; height: 7px; background: var(--copper); border-radius: 50%; }
+  .card ul li strong { color: var(--pullman); }
+  .card p { font-size: 15px; line-height: 1.7; color: #4a3020; }
+  .card p + p { margin-top: 12px; }
+
+  .note { background: #fdf3e3; border-left: 3px solid var(--copper); padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--russet); margin-top: 20px; }
+
+  footer { text-align: center; padding: 40px 24px; font-size: 13px; color: var(--ochre); border-top: 2px solid var(--tan-light); letter-spacing: 0.5px; background: var(--white); }
+  footer strong { color: var(--brown); font-family: 'Playfair Display', serif; }
+
+  a { color: var(--copper); }
+  a:hover { color: var(--pullman); }
+
+  .act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
+  .act{background:var(--cream);border:1px solid rgba(162,102,43,0.2);border-radius:10px;padding:20px 14px;text-align:center;transition:border-color 0.2s,transform 0.2s;}
+  .act:hover{border-color:var(--copper);transform:translateY(-2px);}
+  .act .emoji{font-size:30px;margin-bottom:10px;}
+  .act .name{font-weight:600;font-size:14px;color:var(--pullman);}
+  .act .desc{font-size:12px;color:var(--ochre);margin-top:4px;line-height:1.4;}
+</style>
 </head>
-
 <body>
-
-<header>
-  <h1>Retreat Activities</h1>
+<header class="site-header">
+  <div class="greek">Gamma Sigma Chapter Retreat 2026</div>
+  <h1>Activities</h1>
+  <p class="subtitle">Details coming soon — check back for updates</p>
 </header>
-
-<!-- ⭐ NAV BAR GOES RIGHT HERE -->
-<nav>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="houses.html">Houses</a></li>
-    <li><a href="activities.html">Activities</a></li>
-    <li><a href="packing.html">Packing List</a></li>
-  </ul>
-</nav>
-<!-- ⭐ END NAV BAR -->
-
+<nav><ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="schedule.html">Schedule</a></li>
+  <li><a href="houses.html">Houses</a></li>
+  <li><a href="activities.html">Activities (TBD)</a></li>
+  <li><a href="packing.html">Packing</a></li>
+</ul></nav>
 <div class="container">
-
-  <div class="section">
-    <h2>Outdoor Activities</h2>
-    <ul>
-      <li><strong>Hiking</strong> — scenic trails near Madison Heights & Roanoke</li>
-      <li><strong>Kayaking</strong> — rentals available (weather‑dependent)</li>
-      <li><strong>Ziplining</strong> — optional group add‑on</li>
-      <li><strong>Rock Climbing</strong> — indoor or outdoor depending on weather</li>
-      <li><strong>Pickleball</strong> — tournament if courts are available</li>
-    </ul>
-    <div class="note">
-      We’ll choose between hiking and kayaking based on weather and group preference.
+  <div class="card" style="text-align:center;padding:60px 32px;">
+    <div style="font-size:56px;margin-bottom:20px;">🔒</div>
+    <h2 style="justify-content:center;border-bottom:none;margin-bottom:12px;">TDB</h2>
+    <p style="max-width:480px;margin:0 auto;color:var(--ochre);font-size:16px;line-height:1.7;">
+      Activity details are still being finalized. Check back closer to the retreat for the full lineup!
+    </p>
+    <div class="note" style="max-width:480px;margin:32px auto 0;text-align:left;">
+      Updates will be posted here as plans are confirmed. Stay tuned.
     </div>
   </div>
-
-  <div class="section">
-    <h2>Team Competitions</h2>
-    <ul>
-      <li>Mini‑games: football, frisbee, relay challenges</li>
-      <li>Pickleball tournament</li>
-      <li>Trivia + “Guess Who” chapter edition</li>
-      <li>Hide‑and‑seek survival game</li>
-      <li>Finals on Sunday with prizes for the winning team</li>
-    </ul>
-    <div class="note">
-      Losing team may face a fun forfeit — details revealed at the retreat.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Chill & Social Activities</h2>
-    <ul>
-      <li>PS5, games, and house hangouts</li>
-      <li>Arcade or go‑karts (Saturday night option)</li>
-      <li>Winery / coffee shop options nearby</li>
-      <li>Brotherhood circle on Sunday night</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Rain Plan</h2>
-    <ul>
-      <li>Indoor rock climbing</li>
-      <li>Arcade / go‑karts</li>
-      <li>Team competitions inside</li>
-      <li>PS5 tournaments</li>
-      <li>Board games & chill time</li>
-    </ul>
-  </div>
-
-</div>
-
-<footer>
-  GΣΛ Retreat 2026 • Activities subject to weather & availability
-</footer>
-
-</body>
-</html>
+</div>>
