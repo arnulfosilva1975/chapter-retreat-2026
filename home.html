@@ -1,152 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GS Lambdas Chapter Retreat 2026</title>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — GΣΛ Retreat 2026</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-    header {
-      background: #111;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      letter-spacing: 1px;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 16px;
-      opacity: 0.8;
-    }
-
-    /* NAV BAR */
-    nav {
-      background: #222;
-      padding: 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .section h2 {
-      margin-top: 0;
-      font-size: 22px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
-    }
-    ul {
-      padding-left: 20px;
-      line-height: 1.6;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --brown: #512D1E;
+    --pullman: #411F1F;
+    --russet: #643614;
+    --ochre: #8D633A;
+    --copper: #A2662B;
+    --tan: #E1C09D;
+    --tan-light: #f0dcc2;
+    --cream: #faf6f0;
+    --white: #FFFFFF;
+    --shadow: 0 4px 30px rgba(65,31,31,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--brown); min-height: 100vh; }
+ 
+  .site-header { background: var(--pullman); color: var(--white); padding: 48px 24px 36px; text-align: center; position: relative; overflow: hidden; }
+  .site-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 0%, rgba(162,102,43,0.25) 0%, transparent 70%); pointer-events: none; }
+  .site-header .greek { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--tan); margin-bottom: 10px; font-weight: 500; position: relative; }
+  .site-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 44px); font-weight: 900; position: relative; color: var(--white); }
+  .site-header .subtitle { margin-top: 10px; font-size: 14px; color: var(--tan); position: relative; }
+ 
+  nav { background: var(--brown); border-bottom: 3px solid var(--copper); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(65,31,31,0.25); }
+  nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; padding: 0; margin: 0; }
+  nav ul li a { display: block; padding: 14px 22px; color: var(--tan-light); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s, background 0.2s; border-bottom: 3px solid transparent; margin-bottom: -3px; }
+  nav ul li a:hover { color: var(--white); background: rgba(255,255,255,0.08); border-bottom-color: var(--tan); }
+ 
+  .container { max-width: 960px; margin: 48px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 28px; }
+ 
+  .card { background: var(--white); border-radius: 12px; padding: 32px; box-shadow: var(--shadow); border: 1px solid rgba(162,102,43,0.15); }
+  .card h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--pullman); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--tan-light); display: flex; align-items: center; gap: 10px; }
+  .card h2 .icon { width: 30px; height: 30px; background: var(--brown); border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+ 
+  .card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0; }
+  .card ul li { padding: 9px 0 9px 20px; position: relative; font-size: 15px; line-height: 1.6; color: #4a3020; border-bottom: 1px solid var(--tan-light); }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li::before { content: ''; position: absolute; left: 0; top: 18px; width: 7px; height: 7px; background: var(--copper); border-radius: 50%; }
+  .card ul li strong { color: var(--pullman); }
+  .card p { font-size: 15px; line-height: 1.7; color: #4a3020; }
+  .card p + p { margin-top: 12px; }
+ 
+  .note { background: #fdf3e3; border-left: 3px solid var(--copper); padding: 14px 18px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--russet); margin-top: 20px; }
+ 
+  footer { text-align: center; padding: 40px 24px; font-size: 13px; color: var(--ochre); border-top: 2px solid var(--tan-light); letter-spacing: 0.5px; background: var(--white); }
+  footer strong { color: var(--brown); font-family: 'Playfair Display', serif; }
+ 
+  a { color: var(--copper); }
+  a:hover { color: var(--pullman); }
+ 
+  .hero{position:relative;background:var(--pullman);min-height:340px;display:flex;align-items:flex-end;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#411F1F 0%,#512D1E 55%,#643614 100%);}
+  .hero-pattern{position:absolute;inset:0;opacity:0.05;background-image:repeating-linear-gradient(45deg,#E1C09D 0,#E1C09D 1px,transparent 0,transparent 50%);background-size:20px 20px;}
+  .hero-glow{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(162,102,43,0.3) 0%,transparent 70%);top:-150px;right:-100px;}
+  .hero-content{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto;padding:64px 24px 52px;color:var(--white);}
+  .hero-eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--tan);margin-bottom:14px;font-weight:500;}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,6vw,66px);font-weight:900;line-height:1.08;margin-bottom:16px;}
+  .hero-title span{color:var(--tan);}
+  .hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+  .hero-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(225,192,157,0.35);border-radius:100px;padding:8px 18px;font-size:13px;color:var(--tan-light);}
+  .quick-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+  .quick-link{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:10px;background:var(--cream);color:var(--brown);text-decoration:none;font-weight:500;font-size:14px;border:1px solid rgba(162,102,43,0.2);transition:all 0.2s;}
+  .quick-link:hover{background:var(--brown);color:var(--tan);border-color:var(--brown);transform:translateY(-2px);box-shadow:0 8px 20px rgba(65,31,31,0.2);}
+  .quick-link .ql-icon{font-size:22px;}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;}
+  .stat{background:var(--cream);border-radius:10px;padding:20px;text-align:center;border:1px solid rgba(162,102,43,0.15);}
+  .stat .val{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;color:var(--copper);line-height:1;}
+  .stat .lbl{font-size:12px;color:var(--ochre);margin-top:6px;}
+</style>
 </head>
-
 <body>
-
-<header>
-  <h1>GS Lambdas Chapter Retreat 2026</h1>
-  <p>September 4–7 • Madison Heights, VA</p>
-</header>
-
-<nav>
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="schedule.html">Schedule</a></li>
-    <li><a href="houses.html">Houses</a></li>
-    <li><a href="activities.html">Activities</a></li>
-    <li><a href="packing.html">Packing List</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-
-  <div class="section">
-    <h2>Quick Links</h2>
-    <ul>
-      <li><a href="schedule.html">Retreat Schedule</a></li>
-      <li><a href="houses.html">Houses, Parking & Check‑In</a></li>
-      <li><a href="teams.html">Teams & Points</a></li>
-      <li><a href="packing.html">Packing List</a></li>
-    </ul>
+<div class="hero">
+  <div class="hero-bg"></div><div class="hero-pattern"></div><div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">GΣΛ · Gamma Sigma Lambda</div>
+    <h1 class="hero-title">Chapter Retreat<br><span>2026</span></h1>
+    <div class="hero-meta">
+      <div class="hero-pill"> September 4–7, 2026</div>
+      <div class="hero-pill"> Madison Heights, VA</div>
+      <div class="hero-pill"> Two Houses</div>
+    </div>
   </div>
-
-  <div class="section">
-    <h2>Retreat Overview</h2>
-    <p>
-      Welcome to the official 2026 retreat site. This page includes everything you need for the weekend:
-      schedules, house info, team assignments, and what to bring. Keep this link handy — all updates will be posted here.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>What to Expect</h2>
-    <ul>
-      <li>Three nights across two large houses in Madison Heights, VA</li>
-      <li>Structured daytime activities + evening brotherhood events</li>
-      <li>Team‑based competitions throughout the weekend</li>
-      <li>Meals provided (details in schedule)</li>
-      <li>Rain‑plan backups for all outdoor activities</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Important Notes</h2>
-    <ul>
-      <li>Please carpool — parking is limited.</li>
-      <li>Bring clothes for both warm and rainy weather.</li>
-      <li>Respect quiet hours and house rules.</li>
-      <li>Do not share this link outside the chapter.</li>
-    </ul>
-  </div>
-
 </div>
-
-<footer>
-  GΣΛ Retreat 2026 • For chapter use only
-</footer>
-
+<nav><ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="schedule.html">Schedule</a></li>
+  <li><a href="houses.html">Houses</a></li>
+  <li><a href="activities.html">Activities</a></li>
+  <li><a href="packing.html">Packing</a></li>
+</ul></nav>
+<div class="container">
+  <div class="card">
+    <h2><span class="icon">🔗</span> Quick Links</h2>
+    <div class="quick-links">
+      <a href="schedule.html" class="quick-link"><span class="ql-icon">📋</span> Schedule</a>
+      <a href="houses.html" class="quick-link"><span class="ql-icon">🏠</span> Houses & Parking</a>
+      <a href="activities.html" class="quick-link"><span class="ql-icon">⚡</span> Activities</a>
+      <a href="packing.html" class="quick-link"><span class="ql-icon">🎒</span> Packing List</a>
+    </div>
+  </div>
+  <div class="card">
+    <h2><span class="icon">👋</span> Retreat Overview</h2>
+    <p>Welcome to the official 2026 GΣΛ Chapter Retreat site. This page includes everything you need for the weekend — schedules, house info, activities, and what to bring.</p>
+    <p style="margin-top:12px;">Keep this link handy. All updates will be posted here. <strong>Do not share this link outside the chapter.</strong></p>
+  </div>
+  <div class="card">
+    <h2><span class="icon">📊</span> By the Numbers</h2>
+    <div class="stats">
+      <div class="stat"><div class="val">3</div><div class="lbl">Nights in Virginia</div></div>
+      <div class="stat"><div class="val">2</div><div class="lbl">Large Houses</div></div>
+      <div class="stat"><div class="val">4</div><div class="lbl">Days of Activities</div></div>
+      <div class="stat"><div class="val">∞</div><div class="lbl">Memories Made</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2><span class="icon">📌</span> Important Notes</h2>
+    <ul>
+      <li>Please <strong>carpool</strong> — parking is limited</li>
+      <li>Bring clothes for both <strong>warm and rainy weather</strong></li>
+      <li>Respect quiet hours and house rules at night</li>
+      <li>Do not share this link outside the chapter</li>
+    </ul>
+  </div>
+</div>
+<footer><strong>GΣΛ</strong> &nbsp;·&nbsp; Chapter Retreat 2026 &nbsp;·&nbsp; Madison Heights, VA &nbsp;·&nbsp; For chapter use only</footer>
 </body>
 </html>
